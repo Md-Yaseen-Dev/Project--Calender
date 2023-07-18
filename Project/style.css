@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family:"Poppins",  sans-serif;
+}
+
+body{
+
+    display:flex;
+    /* background: #09869f; */
+    background-image:url(./img/1.picture.jpg);
+    background-size:100%;
+    min-height: 100vh;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+.calender-container{
+    background: #fff;
+    width:450px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.calender-container header{
+    display:flex;
+    align-items: center;
+    padding:25px 30px 10px ;
+    justify-content: space-between;
+}
+
+header .calender-navigation{
+    display: flex;
+}
+
+header .calender-navigation span{
+height: 38px;
+width: 38px;
+margin:0 1px;
+cursor:poiner;
+text-align:center;
+line-height: 38px;
+border-radius: 50%;
+user-select: none;
+color: #111111;
+font-size: 1.9rem
+}
+
+.calender-navigation span:last-child{
+
+    margin-right: -10px;
+}
+header .calender-navigation span:hover {
+    background:#f2f2f2
+}
+
+header .calender-current-date{
+    font-weight:500;
+    font-size: 1.45rem;
+}
+
+.calender-body{
+    padding:20px
+}
+
+.calender-body ul{
+    list-style: none;
+    flex-wrap: wrap;
+    display:flex;
+    text-align: center;
+}
+.calender-body .calender-dates{
+    margin-bottom:20px;
+}
+.calender-body li{
+    width: calc(100% /7);
+    font-size:1.07rem;
+    color:rgb(58, 12, 150)
+}
+.calender-body .calender-weekdays li{
+    cursor:default;
+    font-weight:500;
+}
+
+.calender-body .calender-dates li{
+    margin-top: 30px;
+    position: relative;
+    z-index:1;
+    cursor: pointer;
+}
+
+.calender-dates li.inactive{
+    color:#aaa;
+}
+
+.calender-dates li.active{
+    color:rgb(164, 199, 11);
+}
+
+.calender-dates li::before{
+    position:absolute;
+    content:"";
+    z-index : -1;
+    top:50%;
+    left:50%;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+
+}
+
+.calender-dates li.active::before{
+    background :#6332c5;
+}
+
+.calender-dates li:not(.active):hover::before{
+    background: #e4e1e1;
+}
