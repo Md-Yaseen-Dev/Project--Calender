@@ -25,7 +25,7 @@ const manipulation = () => {
     // console.log(dayone)
     const lastdate = new Date(year, month + 1, 0).getDate(); //how many days in a month;
 
-    const dayend = new Date(year, month, lastdate).getDay();//lastdate was 31 and day is mon =1
+    const dayend = new Date(year, month, lastdate).getDay();//lastdate was 31 and return lastday is mon =1
 
     const monthlastdate = new Date(year, month, 0).getDate(); // prev month lastdate
 
@@ -43,7 +43,7 @@ const manipulation = () => {
 
     }
 
-    // loop to add the dates of current month
+    // --------------------------------loop to add the dates of current month-----------------------
 
     for (i = 1; i <= lastdate; i++) {
 
@@ -65,28 +65,22 @@ const manipulation = () => {
 }
 manipulation();
 
-// attach a click event listners to each icon
+// ----------------attach a click event listners to each icon-----------------------------
 
 prevNexIcon.forEach(icon => {
     icon.addEventListener("click", () => {
 
         month = icon.id === "calender-prev" ? month - 1 : month + 1;
 
-
         if (month < 0 || month > 11) {
 
-
             date = new Date(year, month, new Date().getDate());
-            year = date.getFullYear();
-            month = date.getMonth();
+            year = date.getFullYear(); // 2023 - current year
+            month = date.getMonth();  // 07 - current month
         }
         else {
-
             date = new Date();
         }
-
-
         manipulation()
-
     });
 });
